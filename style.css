@@ -40,14 +40,46 @@ p {
   margin: 15px 0 20px 0;
 }
 
-.section-p1 {
-  padding: 40px 80px;
-}
-
-.section-m1 {
-  margin: 40px 0;
-}
-
 body {
   width: 100%;
+}
+
+/* ++++++++++++++++++++++++++styling navbar+++++++++++++++++++*/
+nav{
+  height: 10vh;
+  width: 100vw;
+  padding: 0px 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul{
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-end;
+
+    li{
+      list-style: none;
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+  .hemburger{
+    height: 5vh;
+    width: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: rgb(248, 248, 7); */
+    display: none;
+
+    span{
+      background-color: black;
+      height: 1vh;
+      /* width: 100%; */
+    }
+  }
+  border-bottom: 5px solid greenyellow;
 }

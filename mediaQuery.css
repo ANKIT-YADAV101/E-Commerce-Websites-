@@ -1,0 +1,15 @@
+
+@media (max-width: 768px){
+    nav ul{
+        display: none;
+    }
+    nav .hemburger{
+        display: flex;
+        height: 4vh;
+        width: 2.5rem;
+
+        span{
+          height: 0.5vh;
+       }
+    }
+}
