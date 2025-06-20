@@ -10,63 +10,65 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Global Styles */
-
-h1 {
-  font-size: 50px;
-  line-height: 64px;
-  color: #222;
-}
-
-h2 {
-  font-size: 46px;
-  line-height: 54px;
-  color: #222;
-}
-
-h4 {
-  font-size: 20px;
-  color: #222;
-}
-
-h6 {
-  font-weight: 700;
-  font-size: 12px;
-}
-
-p {
-  font-size: 16px;
-  color: #465b52;
-  margin: 15px 0 20px 0;
-}
-
 body {
   width: 100%;
 }
 
 /* ++++++++++++++++++++++++++styling navbar+++++++++++++++++++*/
 nav{
+  background-color: white;
   height: 10vh;
   width: 100vw;
-  padding: 0px 3rem;
   display: flex;
+  padding: 0rem 3rem;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid gray;
+  /* box-shadow: 0px 2px 5px gray; */
+}
 
-  ul{
+nav ul{
     width: 40vw;
     display: flex;
     justify-content: space-around;
-    align-content: flex-end;
-
-    li{
-      list-style: none;
-      a{
-        text-decoration: none;
-      }
-    }
+    align-items: center;
+    /* border: 1px solid red; */
   }
-  .hemburger{
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: springgreen;
+  transition: width 0.5s ease-in-out;
+}
+
+nav ul li a:hover {
+  transform: scale(1.1);
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+
+ .hemburger{
     height: 5vh;
     width: 2rem;
     display: flex;
@@ -74,12 +76,58 @@ nav{
     justify-content: space-around;
     /* background-color: rgb(248, 248, 7); */
     display: none;
+ }
 
-    span{
+.hemburger span{
       background-color: black;
       height: 1vh;
       /* width: 100%; */
     }
-  }
-  border-bottom: 5px solid greenyellow;
+
+/*+++++++++++Styling Hero Section++++++++++++*/
+
+.hero{
+  height: 90vh;
+  width: 100%;
+  background-image: url(./img/hero4.png);
+  background-size: cover;
+  background-position: top 25% right 0;
+}
+
+.introContent{
+  height: 100%;
+  width: 60vw;
+  padding-left: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  
+  gap: 5vh;
+}
+.introContent h1{
+  color: #222;
+  font-size: 7vh;
+}
+.introContent p{
+  color: #222;
+  font-size: 3vh;
+  text-align: left;
+}
+.introContent button{
+  width: 20vw;
+  height: 7vh;
+  background: linear-gradient(to bottom, #4169e1, #27408b); /* royalblue to darkblue */
+  color: bisque;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 8px #1a2f6b; /* bottom shadow */
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.introContent button:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px #1a2f6b;
 }
