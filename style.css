@@ -12,6 +12,7 @@ html {
 
 body {
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* ++++++++++++++++++++++++++styling navbar+++++++++++++++++++*/
@@ -24,7 +25,8 @@ nav{
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid gray;
-  /* box-shadow: 0px 2px 5px gray; */
+  position: sticky;
+  top: 0;
 }
 
 nav ul{
@@ -32,7 +34,6 @@ nav ul{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* border: 1px solid red; */
   }
 
 nav ul li {
@@ -74,14 +75,12 @@ nav ul li a:hover::after {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* background-color: rgb(248, 248, 7); */
     display: none;
  }
 
 .hemburger span{
       background-color: black;
       height: 1vh;
-      /* width: 100%; */
     }
 
 /*+++++++++++Styling Hero Section++++++++++++*/
@@ -102,7 +101,6 @@ nav ul li a:hover::after {
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  
   gap: 5vh;
 }
 .introContent h1{
@@ -130,4 +128,43 @@ nav ul li a:hover::after {
 .introContent button:active {
   transform: translateY(4px);
   box-shadow: 0 4px #1a2f6b;
+}
+
+.features{
+  width: 100%;
+}
+.featuresCart ul{
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  /* border: 2px solid red; */
+}
+.features ul li{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  /* border: 2px solid blueviolet; */
+}
+.features ul li button{
+  height: 2rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: rgba(106, 142, 35, 0.717);
+  color: aliceblue;
+  border-radius: 0.3rem;
+  transition: all 0.5s ease-in-out;
+  font-weight: 500;
+}
+.features ul li button:hover{
+   transform: scale(1.1);
+}
+.features ul li img{
+  height: 5rem;
+  width: 6rem;
 }

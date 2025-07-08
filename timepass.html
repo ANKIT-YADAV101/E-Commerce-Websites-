@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban Vibe – Trendy Streetwear</title>
+
+  <!-- Google Font & Icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaQuery.css">
+</head>
+<style>
+:root {
+  --clr-primary: #4169e1;
+  --clr-primary-dark: #27408b;
+  --clr-accent: #00c97b;
+  --clr-light: #f7f7f7;
+  --clr-dark: #222;
+  --radius: 10px;
+  --transition: 0.3s;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Spartan', sans-serif;
+  color: var(--clr-dark);
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--clr-dark);
+  transition: var(--transition);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--clr-dark);
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--clr-accent);
+  transition: width var(--transition);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
+  background: var(--clr-light);
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+}
+
+.intro {
+  padding: 2rem 4rem;
+}
+
+.intro h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+}
+
+.intro p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 1rem 0 2rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  background: linear-gradient(to bottom, var(--clr-primary), var(--clr-primary-dark));
+  color: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 6px rgba(0, 0, 0, .3);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px rgba(0, 0, 0, .3);
+}
+
+.features {
+  background: #fff;
+  padding: 3rem 1rem;
+}
+
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-list li {
+  text-align: center;
+}
+
+.features-list img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.feature-btn {
+  display: inline-block;
+  padding: .4rem 1rem;
+  background: rgba(106, 142, 35, .85);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform var(--transition);
+}
+
+.feature-btn:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--clr-light);
+  font-size: .875rem;
+} 
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    inset: 70px 0 0 0;
+    flex-direction: column;
+    background: #fff;
+    padding: 2rem 0;
+    transform: translateY(-120%);
+    transition: transform var(--transition);
+  }
+
+  .nav-menu.show {
+    transform: translateY(0);
+  }
+
+  .nav-menu li {
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .intro {
+    padding: 2rem;
+  }
+  .cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 375px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+  .intro p {
+    font-size: 1rem;
+  }
+  .cta-btn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .cta-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+</style>
+<body>
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <img src="./img/logo.png" alt="Urban Vibe logo">
+      </a>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./about.html">About Us</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="./cart.html">Cart</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <picture>
+        <!-- <source srcset="./img/hero4.webp" type="image/webp"> -->
+        <img src="./img/hero4.png" alt="Stylish girl wearing Urban Vibe t‑shirt" class="hero-img">
+      </picture>
+      <div class="intro">
+        <h1>Unleash Your Urban Vibe</h1>
+        <p>Trendy Looks. Budget Hooks – <strong>Flat 50% OFF!</strong></p>
+        <a href="#collection" class="cta-btn">Explore Collection</a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" aria-label="Store features">
+      <ul class="features-list">
+        <li>
+          <img src="./img/features/f3.png" alt="Save Money icon" />
+          <a href="#" class="feature-btn">Save Money</a>
+        </li>
+        <li>
+          <img src="./img/features/f4.png" alt="Promotions icon" />
+          <a href="#" class="feature-btn">Promotions</a>
+        </li>
+        <li>
+          <img src="./img/features/f5.png" alt="Happy Sale icon" />
+          <a href="#" class="feature-btn">Happy Sale</a>
+        </li>
+        <li>
+          <img src="./img/features/f6.png" alt="24/7 Support icon" />
+          <a href="#" class="feature-btn">24/7 Support</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Urban Vibe. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
